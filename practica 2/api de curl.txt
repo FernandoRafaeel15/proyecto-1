@@ -1,0 +1,3 @@
+#!/bin/bash
+#"AQUI" va su token:) 
+curl -i  -H "Authorization: token AQUI " -d '{"name":":test2"}' https://api.github.com/user/repos
