@@ -1,0 +1,51 @@
+Starting Nmap 7.80 ( https://nmap.org ) at 2021-04-23 16:47 EDT
+Nmap scan report for 192.168.100.40
+Host is up (0.44s latency).
+All 1000 scanned ports on 192.168.100.40 are filtered
+
+Nmap done: 1 IP address (1 host up) scanned in 56.59 seconds
+
+Hostname -I
+192.168.100.228 2806:2f0:4041:9314:15bc:8530:8bea:672e 2806:2f0:4041:9314:a00:27ff:fe57:38b8
+
+
+nmap 192.168.100.40
+Starting Nmap 7.80 ( https://nmap.org ) at 2021-04-23 22:12 EDT
+Note: Host seems down. If it is really up, but blocking our ping probes, try -Pn
+Nmap done: 1 IP address (0 hosts up) scanned in 3.21 seconds
+
+nmap --script http-headers scanme.nmap.org
+Starting Nmap 7.80 ( https://nmap.org ) at 2021-04-23 22:14 EDT
+Nmap scan report for scanme.nmap.org (45.33.32.156)
+Host is up (0.094s latency).
+Other addresses for scanme.nmap.org (not scanned): 2600:3c01::f03c:91ff:fe18:bb2f
+Not shown: 994 closed ports
+PORT      STATE SERVICE
+22/tcp    open  ssh
+25/tcp    open  smtp
+53/tcp    open  domain
+80/tcp    open  http
+| http-headers: 
+|   Date: Sat, 24 Apr 2021 02:14:23 GMT
+|   Server: Apache/2.4.7 (Ubuntu)
+|   Accept-Ranges: bytes
+|   Vary: Accept-Encoding
+|   Connection: close
+|   Content-Type: text/html
+|   
+|_  (Request type: HEAD)
+9929/tcp  open  nping-echo
+31337/tcp open  Elite
+
+Nmap done: 1 IP address (1 host up) scanned in 6.96 seconds
+
+nmap -Pn--script vuln 192.168.100.40
+Starting Nmap 7.80 ( https://nmap.org ) at 2021-04-23 22:15 EDT
+Failed to resolve "vuln".
+Stats: 0:00:03 elapsed; 0 hosts completed (1 up), 1 undergoing Connect Scan
+Connect Scan Timing: About 1.00% done; ETC: 22:20 (0:04:57 remaining)
+Nmap scan report for 192.168.100.40
+Host is up (0.072s latency).
+All 1000 scanned ports on 192.168.100.40 are filtered
+
+Nmap done: 1 IP address (1 host up) scanned in 6.24 seconds
